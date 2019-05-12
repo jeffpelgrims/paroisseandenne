@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="fr">
   <head>
@@ -7,32 +9,36 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
 
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Paroisse d'Andenne</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item {% block is_active_home %}{% endblock %}">
-        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item {% block is_active_eglises %}{% endblock %}">
-        <a class="nav-link" href="#">Nos églises <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item {% block is_active_pretres %}{% endblock %}">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-    {% block content %}
-    {% endblock %}
+    <div class="container">
+      <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+          <div class="col-12 text-center">
+            <a href="#" class="blog-header-logo text-dark">Paroisse d'Andenne</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <a href="#" class="p-2 text-muted">Accueil</a>
+          <a href="#" class="p-2 text-muted">Nos églises</a>
+          <a href="#" class="p-2 text-muted">Les prêtres</a>
+          <a href="#" class="p-2 text-muted">Agenda</a>
+          <a href="#" class="p-2 text-muted">Nous contacter</a>
+        </nav>
+      </div>
+      {% block content %}
+      {% endblock %}
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
