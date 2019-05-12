@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'eglise.apps.EgliseConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [

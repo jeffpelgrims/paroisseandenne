@@ -7,15 +7,39 @@ Paroisse d'Andenne
 {% block content %}
 
 <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-  <div class="col-md-6 px-0">
+  <div class="col-md-9 px-0">
+    {% for jumbo in jumbotron %}
     <h1 class="display-4 font-italic">
       Lecture
     </h1>
-    <h2 class="font-italic">Psaume</h2>
+    <h2 class="font-italic">{{ jumbo.extrait }}</h2>
     <p class="lead my-3">
-      Oui, le Seigneur est bon, éternel est son amour, sa fidélité demeure d’âge en âge.
+      {{ jumbo.texte }}
     </p>
+    <p class="lead mb-0">
+      <a href="{{ jumbo.jumbo_url }}" class="text-white font-weight-bold" target="_blank">Lire le texte en entier</a>
+    </p>
+    {% endfor %}
   </div>
 </div>
+
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom">
+        Blog de la paroisse
+      </h3>
+    </div>
+    <aside class="col-md-4 blog-sidebar">
+      <h3>Pause de spiritualité</h3>
+      {% for medit in meditation %}
+        <h4 class="font-italic">{{ medit.titre }}</h4>
+        <p class="mb-0">
+          {{ medit.texte }}
+        </p>
+      {% endfor %}
+    </aside>
+  </div>
+</main>
 
 {% endblock %}
