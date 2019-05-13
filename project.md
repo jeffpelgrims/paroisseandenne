@@ -4,7 +4,7 @@ La paroisse d'Andenne
 Site internet divisé en trois parties.
 
 -- La liste des églises de l'entitée d'Andenne
--- Les prêtres en fonction
+-- Les personnes qui s'occupent des paroisses
 -- L'agenda paroissiale
 
 Les églises
@@ -15,8 +15,8 @@ Les églises
 - L'année de construction
 - Un bref descriptif
 
-Les prêtres
------------
+Les personnes
+-------------
 
 - Nom du prêtre
 - Adresse

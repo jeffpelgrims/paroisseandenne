@@ -2,7 +2,7 @@
 
 .blog-header {
   line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #daa520;
 }
 
 .blog-header-logo {
@@ -16,6 +16,18 @@
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+h3 {
+    color: #daa520;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #daa520!important;
+}
+
+.border-gold {
+    border: 1px solid #daa520!important;
 }
 
 .display-4 {
@@ -123,3 +135,4 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
