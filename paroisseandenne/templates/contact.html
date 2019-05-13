@@ -6,10 +6,25 @@ Nous contacter
 
 {% block content %}
 
-<main role="main" class="container">
-    <div class="row">
-        <p>Cool ça :)</p>
-    </div>
-</main>
+<div class="container">
+
+<h3>Nous contacter</h3><br />
+
+<div class="row">
+  <div class="col-md-8">
+      <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Envoyer" /><br /><br />
+      </form>
+  </div>
+  <div class="col-md-4">
+    N'hésitez pas à nous envoyer un petit message ou une demande de renseignement.
+
+
+  </div>
+</div>
+
+</div>
 
 {% endblock %}
