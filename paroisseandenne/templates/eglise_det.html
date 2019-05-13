@@ -1,0 +1,28 @@
+{% extends "eglise.html" %}
+
+{% block eglise %}
+{% for church in eglise %}
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ church.nom }}</h5>
+          <p class="card-text">{{ church.description | linebreaks }}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <p>Adresse :</p>
+              <p>{{ church.rue }}, {{ church.numero }}<br />
+              B-{{ church.c_postal }} {{ church.ville }}</p>
+            </li>
+          </ul>
+          <br />
+          <a href="{{ church.maps_url }}" class="btn btn-primary" target="_blank">Voir dans Google Maps</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card border-light">
+        <img src="{{ church.photo_url }}" alt="" class="card-img-top" width="280px">
+      </div>
+    </div>
+{% endfor %}
+{% endblock %}

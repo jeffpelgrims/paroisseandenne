@@ -29,13 +29,20 @@ Paroisse d'Andenne
       <h3 class="pb-4 mb-4 font-italic border-bottom">
         Blog de la paroisse
       </h3>
+      <div class="blog-post">
+        {% for blogpost in blog %}
+          <h2 class="blog-post-title">{{ blogpost.titre_article }}</h2>
+          <p class="blog-post-meta">{{ blogpost.date_article }}</p>
+          <p>{{ blogpost.contenu | linebreaks}}</p>
+        {% endfor %}
+      </div>
     </div>
     <aside class="col-md-4 blog-sidebar">
       <h3>Pause de spiritualité</h3>
       {% for medit in meditation %}
         <h4 class="font-italic">{{ medit.titre }}</h4>
         <p class="mb-0">
-          {{ medit.texte }}
+          {{ medit.texte | linebreaks }}
         </p>
       {% endfor %}
     </aside>
