@@ -7,6 +7,8 @@ Nos églises
 {% block content %}
 
 <main role="main" class="container">
+    <p>Le secteur paraoisialle d'Andenne se compose de cinq églises. Cliquez sur l'une d'entre elle ci-dessous pour en
+        voir le détail.</p>
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       {% for navigation in nav %}
@@ -15,11 +17,10 @@ Nos églises
     </nav>
   </div>
   <div class="row">
-    <p>Le secteur paraoisialle d'Andenne se compose de cinq églises. Cliquez sur l'une d'entre elle ci-dessus pour en
-      voir le détail.</p>
-    {% block eglise %}
-    {% endblock %}
+      {% block eglise %}
+      {% endblock %}
   </div>
 </main>
+<p>Source : Wikipedia</p>
 
 {% endblock %}

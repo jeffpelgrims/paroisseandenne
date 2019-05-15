@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'eglise.apps.EgliseConfig',
     'blog.apps.BlogConfig',
+    'agenda.apps.AgendaConfig',
 ]
 
 MIDDLEWARE = [

@@ -2,14 +2,20 @@ from django.shortcuts import render
 from .models import Eglise
 
 
+nav = Eglise.objects.all()
+
+
 def accueil(request):
-    nav = Eglise.objects.all()
     return render(request, 'eglise.html', {'nav' : nav})
 
 
 def detail(request, tag):
-    nav = Eglise.objects.all()
-    eglise = Eglise.objects.filter(tag=tag)
+    try:
+        eglise = Eglise.objects.filter(tag=tag)
+    except Eglise.DoesNotExist:
+        raise Http404
+    except ValueError:
+        raise Http404
     context = {
         'eglise': eglise,
         'nav': nav,
