@@ -6,7 +6,7 @@ Paroisse d'Andenne
 
 {% block content %}
 
-<div class="jumbotron p-4 p-md-5 rounded bg-transparent border border-gold">
+<div class="jumbotron p-4 p-md-5 rounded bg-dark text-white">
   <div class="col-md-9 px-0">
     {% for jumbo in jumbotron %}
     <h1 class="display-4 font-italic">
@@ -17,7 +17,7 @@ Paroisse d'Andenne
       {{ jumbo.texte }}
     </p>
     <p class="lead mb-0">
-      <a href="{{ jumbo.jumbo_url }}" class="text-white font-weight-bold" target="_blank">Lire le texte en entier</a>
+      <a href="{{ jumbo.jumbo_url }}" class=" text-white font-weight-bold" target="_blank">Lire le texte en entier</a>
     </p>
     {% endfor %}
   </div>
@@ -33,7 +33,8 @@ Paroisse d'Andenne
         {% for blogpost in blog %}
           <h2 class="blog-post-title">{{ blogpost.titre_article }}</h2>
           <p class="blog-post-meta">{{ blogpost.date_article }}</p>
-          <p>{{ blogpost.contenu | linebreaks}}</p>
+          <p>{{ blogpost.contenu | linebreaks | truncatewords:50 }}</p>
+          <p><a href="blog/{{ blogpost.id }}/" target="_self">Lire la suite</a></p>
         {% endfor %}
       </div>
     </div>

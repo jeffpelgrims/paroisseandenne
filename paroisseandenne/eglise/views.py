@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from .models import Eglise
 
 
@@ -10,12 +11,7 @@ def accueil(request):
 
 
 def detail(request, tag):
-    try:
-        eglise = Eglise.objects.filter(tag=tag)
-    except Eglise.DoesNotExist:
-        raise Http404
-    except ValueError:
-        raise Http404
+    eglise = Eglise.objects.filter(tag=tag)
     context = {
         'eglise': eglise,
         'nav': nav,

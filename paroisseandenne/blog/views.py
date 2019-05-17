@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404
 from .models import Jumbotron, Meditation, Blog
 
 
@@ -16,3 +17,13 @@ def accueil(request):
         'index.html',
         context
     )
+
+
+def blog_detail(request, post_id):
+    try:
+        obj = Blog.objects.get(id=post_id)
+    except Blog.DoesNotExist:
+        raise Http404
+    template_name = 'blog_detail.html'
+    context = {"object" : obj}
+    return render(request, template_name, context)

@@ -15,3 +15,6 @@ class Blog(models.Model):
     titre_article = models.CharField(max_length=255)
     date_article = models.DateTimeField(auto_now=True)
     contenu = models.TextField(null=False)
+
+    def get_absolute_url(self):
+        return f"/eglise/{self.blog_id}"

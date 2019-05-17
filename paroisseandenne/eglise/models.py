@@ -12,5 +12,8 @@ class Eglise(models.Model):
     photo_url = models.CharField(max_length=1025)
     maps_url = models.CharField(max_length=1025, default='None')
 
+    def __str__(self):
+        return self.ville
+
     def get_absolute_url(self):
         return f"/eglise/{self.tag}"

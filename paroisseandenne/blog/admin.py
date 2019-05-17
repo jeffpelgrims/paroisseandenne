@@ -11,7 +11,7 @@ class MeditationAdmin(admin.ModelAdmin):
 
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('titre_article', 'date_article')
+    list_display = ('id', 'titre_article', 'date_article')
 
 
 admin.site.register(Jumbotron, JumbotronAdmin)

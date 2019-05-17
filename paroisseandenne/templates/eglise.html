@@ -7,20 +7,25 @@ Nos églises
 {% block content %}
 
 <main role="main" class="container">
-    <p>Le secteur paraoisialle d'Andenne se compose de cinq églises. Cliquez sur l'une d'entre elle ci-dessous pour en
-        voir le détail.</p>
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
+  <p>Le secteur paraoisialle d'Andenne se compose de cinq églises. Choissiez une église en cliquant sur le bouton ci-dessous.</p>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Choisissez une église
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       {% for navigation in nav %}
-      <a href="{{ navigation.get_absolute_url }}" class="p-2 text-muted">{{ navigation.ville }}</a>
+        <a href="{{ navigation.get_absolute_url }}" class="dropdown-item">{{ navigation.ville }}</a>
       {% endfor %}
-    </nav>
+    </div>
   </div>
+
+  &nbsp;
+
   <div class="row">
       {% block eglise %}
       {% endblock %}
   </div>
 </main>
-<p>Source : Wikipedia</p>
+
 
 {% endblock %}
